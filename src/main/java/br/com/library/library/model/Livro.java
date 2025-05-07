@@ -15,6 +15,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
+@Table(name = "livro")
 @EntityListeners(AuditingEntityListener.class)
 public class  Livro {
     @Id
@@ -38,10 +39,7 @@ public class  Livro {
     @Column(name = "preco", precision = 18, scale = 2)
     private BigDecimal preco;
 
-    @ManyToOne(
-//            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @ManyToOne
     @JoinColumn(name = "id_autor")
     private Autor autor;
 
@@ -53,7 +51,8 @@ public class  Livro {
     @Column(name = "data_atualizacao")
     private LocalDateTime dataAtualizacao;
 
-//    @Column(name = "id_usuario")
-//    private UUID idUsuario;
+    @ManyToOne
+    @JoinColumn (name = "id_usuario")
+    private Usuario usuario;
 
 }

@@ -8,7 +8,6 @@ import br.com.library.library.repository.LivroRepository;
 import br.com.library.library.security.SecurityService;
 import br.com.library.library.validator.AutorValidator;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;

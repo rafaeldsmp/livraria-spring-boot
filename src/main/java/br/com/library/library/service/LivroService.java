@@ -3,8 +3,10 @@ package br.com.library.library.service;
 
 import br.com.library.library.model.GeneroLivro;
 import br.com.library.library.model.Livro;
+import br.com.library.library.model.Usuario;
 import br.com.library.library.repository.LivroRepository;
 import br.com.library.library.repository.specs.LivroSpecs;
+import br.com.library.library.security.SecurityService;
 import br.com.library.library.validator.LivroValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -22,11 +24,14 @@ import java.util.UUID;
 public class LivroService {
 
     private final LivroRepository livroRepository;
-
+    private final SecurityService securityService;
     private final LivroValidator livroValidator;
 
     public Livro salvar(Livro livro) {
         livroValidator.validar(livro);
+        Usuario usuario = securityService.obterUsuarioLogado();
+        livro.setUsuario(usuario);
+        livro.setTitulo(livro.getTitulo());
         return livroRepository.save(livro);
     }
 
