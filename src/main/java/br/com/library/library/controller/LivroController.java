@@ -52,7 +52,7 @@ public class LivroController implements GenericController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyRole('OPERADOR', 'GERENTE')")
+    @PreAuthorize("hasRole('GERENTE')")
     public ResponseEntity<Page<ResultadoPesquisaLivroDTO>> listar(
             @RequestParam(value = "isbn", required = false)
             String isbn,
