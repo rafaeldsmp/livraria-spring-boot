@@ -401,7 +401,7 @@ Esta API permite o gerenciamento dos autores e livros de uma livraria, contempla
    ```bash
    git clone https://github.com/rafaeldsmp/livraria-spring-boot.git
    ```
-2. Configure o banco de dados em `application.properties` ou `application.yml`.  
+2. Configure o banco de dados em `application.yml`.  
 
 3. Acesse a documentação Swagger em:  
    `http://localhost:8080/swagger-ui.html`
