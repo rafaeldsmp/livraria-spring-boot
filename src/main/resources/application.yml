@@ -1,8 +1,8 @@
 spring:
   application:
     name: library
-  profiles:
-    active: production
+#  profiles:
+#    active: production
   output:
     ansi:
       enabled: always
@@ -51,7 +51,7 @@ management:
 springdoc:
   override-with-generic-response: false
 
-### production
+# production
 ---
 spring:
   config:
